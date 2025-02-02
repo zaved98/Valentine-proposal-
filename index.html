@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            animation: fadeIn 2s ease-out;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        h1 {
+            color: #e91e63;
+            font-size: 40px;
+            margin-top: 50px;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        img {
+            width: 150px;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: floatDoraemon 5s ease-in-out infinite;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: red;
+            animation: floatHearts 3s ease-in-out infinite;
+        }
+
+        @keyframes floatDoraemon {
+            0% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 30px); }
+            100% { transform: translate(-50%, 0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatHearts {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-100px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do You Love Me? ❤️</h1>
+    <img src="https://i.pinimg.com/originals/3f/7b/df/3f7bdf3e83d0e4e0a18b57f61fd8d40e.png" alt="Doraemon">
+
+    <!-- Floating Hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-delay: 0.5s;">❤️</div>
+    <div class="heart" style="left: 50%; animation-delay: 1s;">❤️</div>
+    <div class="heart" style="left: 70%; animation-delay: 1.5s;">❤️</div>
+    <div class="heart" style="left: 90%; animation-delay: 2s;">❤️</div>
+
+    <!-- Yes/No Buttons -->
+    <div style="margin-top: 150px;">
+        <button style="font-size: 20px; padding: 15px; background-color: green; color: white; border: none; border-radius: 10px; cursor: pointer;" onclick="answer('Yes')">Yes</button>
+        <button style="font-size: 20px; padding: 15px; background-color: red; color: white; border: none; border-radius: 10px; cursor: pointer;" onclick="answer('No')">No</button>
+    </div>
+
+    <script>
+        function answer(response) {
+            alert(`You answered: ${response}`);
+            if (response === 'Yes') {
+                document.body.style.backgroundColor = "lightgreen";
+                document.querySelector('h1').textContent = "Yay! I'm so happy! ❤️";
+            } else {
+                document.body.style.backgroundColor = "lightcoral";
+                document.querySelector('h1').textContent = "Oh no! Maybe next time. 😢";
+            }
+        }
+    </script>
+
+</body>
+</html>
